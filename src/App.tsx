@@ -14,7 +14,9 @@ interface LiveView {
 }
 
 const getViews = async (): Promise<LiveView[]> => {
-  return fetch('https://food-truck-spy.appspot.com/api/views')
+  return fetch('https://food-truck-spy.appspot.com/api/views', {
+    cache: 'no-cache',
+  })
     .then(r => r.json() as Promise<{ id: string, display: string }[]>)
     .then(views => views.map((v): LiveView => {
       return {
@@ -25,7 +27,9 @@ const getViews = async (): Promise<LiveView[]> => {
 }
 
 const getView = async (view: string): Promise<Snapshot> => {
-    return fetch(`https://food-truck-spy.appspot.com/api/views/${view}`)
+    return fetch(`https://food-truck-spy.appspot.com/api/views/${view}`, {
+        cache: 'no-cache',
+      })
       .then(r => r.json() as Promise<{ data?: string, time: string }>)
       .then(json => {
         return {
