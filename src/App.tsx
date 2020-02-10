@@ -83,7 +83,7 @@ class App extends React.Component<{}, AppState> {
         return (
           <div key={view.location} className="view-container">
             <h2>{view.locationName}</h2>
-            <p><em>Loading</em></p>
+            <p><em>Fetching the Latest...</em></p>
           </div>
         );
       }
