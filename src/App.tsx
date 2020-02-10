@@ -64,7 +64,7 @@ class App extends React.Component<{}, AppState> {
                 }
                 this.setState({ views });
               });
-          }, 1000),
+          }, 15000),
         }
       }))
       .then(pollers => this.setState({ views: pollers }));
