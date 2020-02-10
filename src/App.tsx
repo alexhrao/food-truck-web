@@ -92,7 +92,7 @@ class App extends React.Component<{}, AppState> {
         <div key={view.location} className="view-container">
           <h2>{view.locationName}</h2>
           {img}
-          <p><em>Last Updated: {view.snap.time.toString()}</em></p>
+          <p className="view-update"><em>Last Updated: {view.snap.time.toString()}</em></p>
         </div>
       )
     })

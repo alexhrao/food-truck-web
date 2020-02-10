@@ -36,6 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: black;
+  color: white;
+}
+
 .viewers {
   display: flex;
   flex-direction: row;
@@ -51,4 +57,11 @@
 .view-container img {
   border-radius: 5px;
   max-width: 90vw;
+}
+
+.view-update {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #333333;
 }
