@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d5bf0f72b7c2a27de675fc631c29be5",
+    "revision": "307669fa1bddf738e88cf7237f989e27",
     "url": "/food-truck-web/index.html"
   },
   {
-    "revision": "50493294096bdfee16cb",
+    "revision": "37af18f00d2bf5e92f70",
     "url": "/food-truck-web/static/css/main.852c6d85.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/food-truck-web/static/js/2.f5edaa73.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "50493294096bdfee16cb",
-    "url": "/food-truck-web/static/js/main.d5deecb3.chunk.js"
+    "revision": "37af18f00d2bf5e92f70",
+    "url": "/food-truck-web/static/js/main.76fb896e.chunk.js"
   },
   {
     "revision": "bdea23818908cd343125",

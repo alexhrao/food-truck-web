@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/food-truck-web/precache-manifest.4007684f569dbc7a9b7b77a24c23c723.js"
+  "/food-truck-web/precache-manifest.6ea2e6906a0290c748d36aa624bf8400.js"
 );
 
 self.addEventListener('message', (event) => {
