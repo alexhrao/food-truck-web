@@ -36,7 +36,7 @@ const getView = async (view: string): Promise<Snapshot> => {
 }
 
 interface LiveViewPoller extends LiveView {
-  poller: number,
+  poller: () => unknown,
 }
 
 interface AppState {
@@ -53,7 +53,7 @@ class App extends React.Component<{}, AppState> {
       .then(views => views.map((v, i): LiveViewPoller => {
         return {
           ...v,
-          poller: window.setInterval(() => {
+          poller: () => {
             getView(v.location)
               .then(snap => {
                 const { views } = this.state;
@@ -64,10 +64,16 @@ class App extends React.Component<{}, AppState> {
                 }
                 this.setState({ views });
               });
-          }, 15000),
+          },
         }
       }))
-      .then(pollers => this.setState({ views: pollers }));
+      .then(pollers => {
+        pollers.forEach(p => {
+          p.poller();
+          window.setInterval(p.poller, 15000);
+        });
+        this.setState({ views: pollers });
+      });
   }
 
   public render() {
