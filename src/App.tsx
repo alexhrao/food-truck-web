@@ -33,7 +33,7 @@ const getView = async (view: string): Promise<Snapshot> => {
       .then(r => r.json() as Promise<{ data?: string, time: string }>)
       .then(json => {
         return {
-          src: json.data === undefined ? '' : `data:image/png;base64,${json.data}`,
+          src: json.data === undefined || json.data === '' ? '' : `data:image/png;base64,${json.data}`,
           time: new Date(json.time),
         }
       });
@@ -91,11 +91,10 @@ class App extends React.Component<{}, AppState> {
           </div>
         );
       }
-      const img = view.snap === undefined ? <p>Loading</p> : <img src={view.snap.src} alt={`View of ${view.snap.time}`} />
       return (
         <div key={view.location} className="view-container">
           <h2>{view.locationName}</h2>
-          {img}
+          <img src={view.snap.src} alt={`View of ${view.snap.time}`} />
           <p className="view-update"><em>Last Updated: {view.snap.time.toString()}</em></p>
         </div>
       )
